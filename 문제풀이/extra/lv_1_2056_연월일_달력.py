@@ -15,3 +15,17 @@
 # 테스트 케이스 t에 대한 결과는 “#t”을 찍고, 한 칸 띄고, 정답을 출력한다.
 # (t는 테스트 케이스의 번호를 의미하며 1부터 시작한다.)
     
+T = int(input())
+
+for i in range(1, T + 1):
+    cal = input()
+    year, month, day = int(cal[:4]), int(cal[4:6]), int(cal[6:])
+    
+    if month in (1, 3, 5, 7, 8, 10, 12) and 0 < day <= 31:
+        print(f'#{i} {cal[:4]}/{cal[4:6]}/{cal[6:]}')
+    elif month in (4, 6, 9, 11) and 0 < day < 31:
+        print(f'#{i} {cal[:4]}/{cal[4:6]}/{cal[6:]}')
+    elif month == 2 and 0 < day <= 28:
+        print(f'#{i} {cal[:4]}/{cal[4:6]}/{cal[6:]}')
+    else:
+        print(f'#{i} -1')
